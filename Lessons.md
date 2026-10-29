@@ -4,7 +4,7 @@ What went wrong, why it happened, and the rule that changed because of it. Newes
 
 ## 2026-10-29 · Building Ice Ray for Pets in a cloud session
 - **The vault notes disagreed on Secret pets:** the Game Plan said Secrets only in zones 4-5, the Pet Brief gave every zone one. **Owner's call:** zones 4-5 only. **Rule:** when two notes disagree, ask, then fix both notes the same day.
-- **The cloud sandbox blocks `www.figma.com`,** so a `generate_image` result can't be downloaded (403); only the 256 px thumbnail comes back. **Rule:** before paid generations in a cloud session, check that `www.figma.com` (and the Weave output host) are allowed in the environment's network settings, or the credits buy only a thumbnail.
+- **The cloud sandbox blocks `www.figma.com`,** so a `generate_image` result can't be downloaded with curl (403), and the network settings had no edit option for the owner. **Fix that worked:** `get_screenshot` on the new image's node (`maxDimension 1024`, `contentsOnly true`, `enableBase64Response true`) sends the full 1024 px PNG inline for free. **Rule:** in a cloud session, fetch every generated image this way straight after generating it ([[Games/Ice Ray for Pets/Pet Art Recipe]] › 7).
 - **Studio, Blender and Obsidian MCPs aren't in a cloud session.** The vault is edited as files in its git repo instead; Studio work needs a session on the owner's PC.
 
 ## 2026-10-29 · First rules test (Bounce for Eggs)
