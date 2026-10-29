@@ -20,7 +20,8 @@ status: in progress, art style locked (B, soft clay toy); 3D method being tested
 | Image tool | Figma MCP `generate_image` |
 | Model | `gpt-image-2.5-sunburst` (the painted, detailed look; the cheaper Gemini models are not used) |
 | Size | `1024 × 1024` for one pet; `1536 × 1024` for a side-by-side comparison |
-| Figma file | **Ice Ray for Pets - Pet Concepts**, `fileKey = EQIseY7rLHymUZQuVPANqQ`, https://www.figma.com/design/EQIseY7rLHymUZQuVPANqQ (team plan `team::1687810435973568154`) |
+| Figma file | **Ice Ray for Pets - Pet Concepts**, `fileKey = EQIseY7rLHymUZQuVPANqQ`, https://www.figma.com/design/EQIseY7rLHymUZQuVPANqQ (team plan `team::1687810435973568154`). This one belongs to the owner. |
+| Builder's Figma file | The builder makes their own file with the same name and generates into it. David's: `fileKey = gwLGeHxXfjNYdW8vHst6fU`, https://www.figma.com/design/gwLGeHxXfjNYdW8vHst6fU (team `team::1688893383797864407`), created 2026-10-29. |
 | Image files | `C:\Users\n2012\Documents\RobloxKidsGames\prototype\ice-ray-for-pets\pets\` |
 | File names | `<pet-name>-v<N>.png`, lower case with dashes, e.g. `frostfox-v3.png`. Style tests: `<pet-name>-style-test-v<N>.png`. Never overwrite an old version. |
 | Cost | **Every call uses Figma AI credits.** Ask the owner before each batch. Make one pet first, get an OK on it, then do the rest of the zone. |
@@ -89,6 +90,7 @@ Glowing parts (crystals, gems, neon) stay **smooth, glassy and glowing**, so the
 | 2026-10-29 | `frostfox-v1.png` | **Rejected, "looks strange".** Realistic fur strands, anime eyes with eyelashes, colour came out pale sky-blue instead of deep teal (would vanish in the ice cube). Prompt asked for "satin vinyl" but the model ignored it and made fluffy fur. |
 | 2026-10-29 | `frostfox-style-test-v2.png` | Three styles in one image (A glossy vinyl, B soft clay, C painted with outline). One generation gives a style choice for the price of one. "Deep saturated" + "simple round black eyes, no eyelashes" fixed the colour and the eyes in all three. **The owner picked B.** |
 | 2026-10-29 | `frostfox-3d-blender-v1.png` | **Rejected: "looks very shit and nothing like the photo".** Hand-built in Blender from spheres and cones. See section 9. |
+| 2026-10-29 | `snowbun-v1.png` | First pet made from sections 3 + 4 unchanged (builder's Figma file). Same family as Frostfox: matte clay, chunky clumps, same eyes and light; deep bubblegum pink; earmuff ears with pom-poms read at once. Fills a bit more of the frame than Frostfox. Waiting for the owner. **Download problem:** the cloud sandbox's network blocks `www.figma.com`, so `image.url` gave 403 and only the 256 px thumbnail was saved. Allow `www.figma.com` in the environment's network settings before the next batch. |
 
 ## 8. Still to decide
 - **Pets per zone:** the brief says 7 + 1 Secret per zone (40 at launch, plus about 30 hybrids). The owner asked if 8 is enough; decide before generating the zones.

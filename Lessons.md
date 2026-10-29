@@ -2,6 +2,11 @@
 
 What went wrong, why it happened, and the rule that changed because of it. Newest at the top. Every playtest, phone check and piece of feedback lands here, and then the matching rulebook note gets updated.
 
+## 2026-10-29 · Building Ice Ray for Pets in a cloud session
+- **The vault notes disagreed on Secret pets:** the Game Plan said Secrets only in zones 4-5, the Pet Brief gave every zone one. **Owner's call:** zones 4-5 only. **Rule:** when two notes disagree, ask, then fix both notes the same day.
+- **The cloud sandbox blocks `www.figma.com`,** so a `generate_image` result can't be downloaded (403); only the 256 px thumbnail comes back. **Rule:** before paid generations in a cloud session, check that `www.figma.com` (and the Weave output host) are allowed in the environment's network settings, or the credits buy only a thumbnail.
+- **Studio, Blender and Obsidian MCPs aren't in a cloud session.** The vault is edited as files in its git repo instead; Studio work needs a session on the owner's PC.
+
 ## 2026-10-29 · First rules test (Bounce for Eggs)
 Review of [[Game Design Rules]], then a test prototype (`prototype/bounce-for-eggs/index.html`: coins → hatch → pets add bounce → bounce pad to the next island) played by a playtest bot.
 
