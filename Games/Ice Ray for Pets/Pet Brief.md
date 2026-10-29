@@ -9,8 +9,8 @@ status: brief, roster not designed yet
 What this game needs from its pets. The process and quality bar are in [[Roblox Setup/Pet Rules]]; the game is in [[Games/Ice Ray for Pets/Game Plan]]. **Pets are made first.**
 
 ## 1. How many
-> [!warning] Owner decision 2026-10-29: Secrets only in zones 4-5
-> The Game Plan (section 5) and this brief disagreed. The owner chose the Game Plan: **Secret pets spawn only in Desert Dunes and Volcano** (1 in 20,000). The Secret lines below and Snowglobe Drake (section 10) need updating once the owner says where those pets go.
+> [!note] Owner decision 2026-10-29: a Secret in every zone
+> The Game Plan (section 5) said Secrets only in zones 4-5; this brief gave every zone one. The owner first picked zones 4-5, then changed it to **a Secret in every zone** (1 in 20,000). The Game Plan now matches this brief.
 
 - **Launch:** 5 zones × 7 regular pets = **35**, plus **1 Secret per zone = 5**. Total 40.
 - Per zone: 2 Common, 1 Uncommon, 1 Rare, 1 Epic, 1 Legendary, 1 Mythic (+ the Secret).

@@ -64,7 +64,7 @@ The hub (your pen + everyone's pens) sits at the cold north end. Zones get **hot
 - Depth: snowy mountains and an ice-blue sky in the north, heat haze and a smoking (friendly) volcano far to the south, so the next goal is always visible.
 
 ## 5. Pets and rarity
-Original, silly creatures, each looking like its name. Each zone has about 6 regular pets + 1 Secret.
+Original, silly creatures, each looking like its name. Each zone has 7 regular pets + 1 Secret (8 per zone, roster in [[Games/Ice Ray for Pets/Pet Brief]]). **Every zone has a Secret** (owner, 2026-10-29), not just zones 4-5.
 
 | Tier | Spawn odds | Cube life (base) | Coins/sec (Meadow) |
 |---|---|---|---|
@@ -74,13 +74,13 @@ Original, silly creatures, each looking like its name. Each zone has about 6 reg
 | Epic | 4% | 40 s | 30 |
 | Legendary | 0.9% | 30 s | 100 |
 | Mythic | 0.1% | 25 s | 400 |
-| Secret | 1 in 20,000 (zones 4-5) | 20 s | 1,500 |
+| Secret | 1 in 20,000 (every zone) | 20 s | 1,500 |
 
 - Income × **4 per zone** (a Volcano common out-earns a Meadow epic).
 - **Cube life = base × ray bonus ÷ heat**, with sun/shade on top.
 - **Odds shown on every zone sign**, rolled on the server, with **soft pity** (odds creep up on dry streaks; the shown odds include pity and any active luck potion).
 - **Grind check:** in zones 4-5 a run takes about 1 minute, so a 0.1% Mythic takes about 17 hours on average (weeks at 30 min a day). The Secret is a months-long chase, with pity capping the worst case.
-- Example Meadow roster: Snowbun (bunny), Pupcicle (puppy), Mittenkit (cat), Waddles (penguin), Frostfox (rare), Yeti Jr (legendary), Aurora Owl (mythic).
+- Meadow roster (agreed, Pet Brief › 10): Snowbun and Waddles (common), Mittenkit (uncommon), Pupcicle (rare), Frostfox (epic), Blizzard Yeti (legendary), Aurora Owl (mythic), Snowglobe Drake (secret).
 
 ## 6. Pose freeze
 - Wild pets loop through actions: idle → yawn → jump → dance, with a rare **sneeze**.

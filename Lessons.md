@@ -3,7 +3,7 @@
 What went wrong, why it happened, and the rule that changed because of it. Newest at the top. Every playtest, phone check and piece of feedback lands here, and then the matching rulebook note gets updated.
 
 ## 2026-10-29 · Building Ice Ray for Pets in a cloud session
-- **The vault notes disagreed on Secret pets:** the Game Plan said Secrets only in zones 4-5, the Pet Brief gave every zone one. **Owner's call:** zones 4-5 only. **Rule:** when two notes disagree, ask, then fix both notes the same day.
+- **The vault notes disagreed on Secret pets:** the Game Plan said Secrets only in zones 4-5, the Pet Brief gave every zone one. **Owner's call:** first zones 4-5 only, then (once it meant cutting Snowglobe Drake) a Secret in every zone. **Rule:** when two notes disagree, ask, show what each answer costs (here: losing a designed pet), then fix both notes the same day.
 - **The cloud sandbox blocks `www.figma.com`,** so a `generate_image` result can't be downloaded with curl (403), and the network settings had no edit option for the owner. **Fix that worked:** `get_screenshot` on the new image's node (`maxDimension 1024`, `contentsOnly true`, `enableBase64Response true`) sends the full 1024 px PNG inline for free. **Rule:** in a cloud session, fetch every generated image this way straight after generating it ([[Games/Ice Ray for Pets/Pet Art Recipe]] › 7).
 - **Studio, Blender and Obsidian MCPs aren't in a cloud session.** The vault is edited as files in its git repo instead; Studio work needs a session on the owner's PC.
 
