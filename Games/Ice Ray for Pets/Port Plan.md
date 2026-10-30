@@ -125,4 +125,4 @@ One list in `Config.analytics`; `AnalyticsSvc` refuses names not in it.
 
 ## Status
 - **2026-10-30:** written. Server half about 60% done in `roblox/src` (not yet run in Studio). Waiting on the prototype QA verdict.
-- **2026-10-30:** first strict type check of the written code: 13 problems fixed, among them a require loop (WildPetSpawner ↔ FreezeService), now broken by FreezeService listening to `ProximityPromptService` instead. Only the missing EventService is left.
+- **2026-10-30:** first strict type check of the written code: 15 problems fixed, among them a require loop (WildPetSpawner ↔ FreezeService), now broken by FreezeService listening to `ProximityPromptService` instead. Only the missing EventService is left.
