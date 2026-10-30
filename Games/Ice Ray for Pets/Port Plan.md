@@ -19,12 +19,12 @@ Nobody but the owner changes a thing. Everyone else calls the owner or listens t
 | Player position, zone, walk speed, "what am I doing" | `PlayerTracker` | server |
 | World parts: pens and plots, bridges, gates, gift box, boards | `WorldService` | server |
 | Wild pets (spawn, odds, pity, wander, despawn) | `WildPetSpawner` | server |
-| Freezing (prompt checks, pose, hold time) | `FreezeService` | server |
+| Freezing (prompt checks, pose, hold time), the ice bridge spot and its timer | `FreezeService` | server |
 | Carried cubes and melting, Super Freeze offer | `CarryService` | server |
-| Coins, income, banking, welcome back, daily gift | `PenService` | server |
+| Coins, income, banking, welcome back, daily gift (connects the gift box prompt) | `PenService` | server |
 | Upgrade prices and buying | `ShopService` | server |
 | Index pages and page rewards | `IndexService` | server |
-| Big Chill, ice bridge timer | `EventService` | server |
+| Big Chill | `EventService` | server |
 | Robux: one `ProcessReceipt`, PolicyService check | `MonetizationService` | server |
 | Boards (OrderedDataStore), leaderstats | `LeaderboardService` | server |
 | Camera | `CameraController` | client |
@@ -49,12 +49,12 @@ Status: **done** = written (not yet run in Studio), **todo** = not written.
 | `server.js` setPosition, tickPlayerZone | `.../PlayerTracker` (uses the server's own HumanoidRootPart position) | PlayerTracker | done |
 | `scenery.js` pens, bridges, gate | `.../WorldService` (4 plots, Forest gate by collision group) | WorldService | done |
 | `server.js` spawner, pity, shownOdds | `.../WildPetSpawner` | WildPetSpawner | done |
-| `server.js` beginZap / endZap | `.../FreezeService` (ProximityPrompt `HoldDuration`, server checks) | FreezeService | done, needs PenService and EventService |
+| `server.js` beginZap / endZap, ice bridge | `.../FreezeService` (listens to `ProximityPromptService`, server checks) | FreezeService | done, needs EventService |
 | `server.js` tickCarry, melt, Super Freeze mock | `.../CarryService` | CarryService | done, needs EventService |
 | `server.js` bankCubes, income, welcome, gift | `.../PenService` | PenService | todo |
 | `server.js` buyUpgrade | `.../ShopService` | ShopService | todo |
 | `server.js` completedPages | `.../IndexService` | IndexService | todo |
-| `server.js` tickChill, ice bridge | `.../EventService` | EventService | todo |
+| `server.js` tickChill | `.../EventService` | EventService | todo |
 | `buySuperFreezeMock` | `.../MonetizationService` | MonetizationService | todo |
 | `server.js` boards, fake rivals | `.../LeaderboardService` (real OrderedDataStores, no fake rivals) | LeaderboardService | todo |
 | `client.js` camera | `StarterPlayerScripts/Client/CameraController` | CameraController | todo |
@@ -118,10 +118,11 @@ One list in `Config.analytics`; `AnalyticsSvc` refuses names not in it.
 ## 8. Order of work
 1. Prototype QA → GO ([[QA Rules]] › 1). No more Roblox code before it.
 2. Finish the server: EventService, PenService, ShopService, IndexService, MonetizationService, LeaderboardService.
-3. Type-check everything (`luau-lsp analyze` with the Roblox types) until clean.
+3. Type-check everything until clean: `roblox/tools/typecheck.sh` (luau-lsp with the types file from the same release; see the script).
 4. Client: InputController, CameraController, Screen + HudController + PopupController, PetVisuals, EffectsController, SoundController, SettingsController.
 5. Server rule tests (spawner odds, pity, melt time, prices, welcome cap, gift streak, weekly reset day).
 6. Studio session on the owner's PC: build the world look, insert models, then Studio QA solo and with 2+ players in Start Server ([[QA Rules]] › 7, 8).
 
 ## Status
-- **2026-10-30:** written. Server half about 60% done in `roblox/src` (not yet run or type-checked). Waiting on the prototype QA verdict.
+- **2026-10-30:** written. Server half about 60% done in `roblox/src` (not yet run in Studio). Waiting on the prototype QA verdict.
+- **2026-10-30:** first strict type check of the written code: 13 problems fixed, among them a require loop (WildPetSpawner ↔ FreezeService), now broken by FreezeService listening to `ProximityPromptService` instead. Only the missing EventService is left.
