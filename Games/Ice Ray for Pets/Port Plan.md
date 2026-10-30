@@ -1,7 +1,7 @@
 ---
 created: 2026-10-30
 tags: [roblox, ice-ray-for-pets, port]
-status: prototype QA GO (2026-10-30); port in progress
+status: prototype QA GO (2026-10-30); port code written and type-checked, waiting for Studio QA
 ---
 
 # Ice Ray for Pets · Port Plan
@@ -34,7 +34,10 @@ Nobody but the owner changes a thing. Everyone else calls the owner or listens t
 | Pet visuals (models, wander, dazed spin, cube look) | `PetVisuals` | client |
 | Effects (beam, bursts, Big Chill snow) | `EffectsController` | client |
 | Sounds and music | `SoundController` | client |
-| Settings (music, sound, reduced motion, low graphics, °C/°F) | `SettingsController` | client, saved on the server |
+| Settings (music, sound, reduced motion, low graphics, °C/°F) | `SettingsController` | client, saved on the server (`SetSetting`, `DataService`) |
+| World prompt look (Custom style) | `PromptController` | client |
+| Zone-sign odds (your own) | `SignsController` | client |
+| Studio test commands | `DevService` | server, Studio only |
 | Input (keyboard, touch, gamepad) | `InputController` | client |
 
 ## 2. Prototype piece → Roblox place → owner
@@ -49,22 +52,22 @@ Status: **done** = written (not yet run in Studio), **todo** = not written.
 | `server.js` setPosition, tickPlayerZone | `.../PlayerTracker` (uses the server's own HumanoidRootPart position) | PlayerTracker | done |
 | `scenery.js` pens, bridges, gate | `.../WorldService` (4 plots, Forest gate by collision group) | WorldService | done |
 | `server.js` spawner, pity, shownOdds | `.../WildPetSpawner` | WildPetSpawner | done |
-| `server.js` beginZap / endZap, ice bridge | `.../FreezeService` (listens to `ProximityPromptService`, server checks) | FreezeService | done, needs EventService |
-| `server.js` tickCarry, melt, Super Freeze mock | `.../CarryService` | CarryService | done, needs EventService |
-| `server.js` bankCubes, income, welcome, gift | `.../PenService` | PenService | todo |
-| `server.js` buyUpgrade | `.../ShopService` | ShopService | todo |
-| `server.js` completedPages | `.../IndexService` | IndexService | todo |
-| `server.js` tickChill | `.../EventService` | EventService | todo |
-| `buySuperFreezeMock` | `.../MonetizationService` | MonetizationService | todo |
-| `server.js` boards, fake rivals | `.../LeaderboardService` (real OrderedDataStores, no fake rivals) | LeaderboardService | todo |
-| `client.js` camera | `StarterPlayerScripts/Client/CameraController` | CameraController | todo |
-| `client.js` pets, cubes, beam, bursts | `.../PetVisuals`, `.../EffectsController` | client | todo |
-| `hud.js` + `index.html` CSS | `StarterGui` ScreenGuis built by `Screen` + `HudController` + `PopupController` | client | todo |
-| `audio.js` | `.../SoundController` (ids in `Config.sounds`) | SoundController | todo |
-| `input.js` | `.../InputController` + ContextActionService | InputController | todo |
+| `server.js` beginZap / endZap, ice bridge | `.../FreezeService` (listens to `ProximityPromptService`, server checks, refuses others' personal rares) | FreezeService | done |
+| `server.js` tickCarry, melt, Super Freeze mock | `.../CarryService` | CarryService | done |
+| `server.js` bankCubes, income, welcome, gift | `.../PenService` (also Storage, equip, Equip best, coin gate prompt, the client's `Data` copy) | PenService | done |
+| `server.js` buyUpgrade | `.../ShopService` | ShopService | done |
+| `server.js` completedPages | `.../IndexService` | IndexService | done |
+| `server.js` tickChill | `.../EventService` | EventService | done |
+| `buySuperFreezeMock` | `.../MonetizationService` | MonetizationService | done |
+| `server.js` boards, fake rivals | `.../LeaderboardService` (real OrderedDataStores, no fake rivals) | LeaderboardService | done |
+| `client.js` camera | `StarterPlayerScripts/Client/CameraController` (Roblox follow camera; owns FOV and zoom) | CameraController | done |
+| `client.js` pets, cubes, beam, bursts | `.../PetVisuals`, `.../EffectsController`, `.../SignsController` (your own odds) | client | done (stand-in balls until the models are uploaded) |
+| `hud.js` + `index.html` CSS | ScreenGuis built by `Screen` + `HudController` + `PopupController` + `PromptController` (draws the Custom-style world prompts) | client | done |
+| `audio.js` | `.../SoundController` (ids in `Config.sounds`) | SoundController | done |
+| `input.js` | `.../InputController` + ContextActionService | InputController | done |
 | `scenery.js` look (sky, terrain, trees, props) | Built in Studio: Terrain, Lighting, models | owner session in Studio | todo |
 | (not in the prototype) rebirth | `.../RebirthService` (Game Plan › 18) | RebirthService | later layer, after the first Studio QA GO |
-| `bot.js`, timer panel, exploit test | Server rule tests + dev commands locked to Studio (`RunService:IsStudio()`) | QA | todo |
+| `bot.js`, timer panel, exploit test | Server rule tests (todo) + `DevService` chat commands locked to Studio (done) | QA | half |
 
 ## 3. Remotes
 Clients send intent only. Every handler type-checks, checks can-do-it-now, rate-limits and decides on the server ([[Code Rules]] › 6).
@@ -76,6 +79,9 @@ Clients send intent only. Every handler type-checks, checks can-do-it-now, rate-
 | `CollectWelcome()` | a welcome is waiting; grant + "claimed" stamp in one `UpdateAsync` |
 | `RequestSuperFreeze(petId)` | offer belongs to this player, not used this run, pet still dazed, in range; then `PromptProductPurchase` |
 | `SetMenuOpen(bool)` | boolean; only changes "lastAction" for analytics |
+| `EquipPet(id, on)` / `EquipBest()` | id is one of your pets, boolean; "Pen full" refused on the server |
+| `SetSetting(key, value)` | key in `Config.settingsDefault`, same type; unit only C or F |
+| Gate: ProximityPrompt at the Forest gate | distance, not yet open, coins on the server; pay + open in one save |
 | `ShopOpened()` | rate-limited; analytics only |
 | Gift: ProximityPrompt on the gift box | waiting since the last UTC day; grant + stamp in one `UpdateAsync` |
 
@@ -154,3 +160,7 @@ One list in `Config.analytics`; `AnalyticsSvc` refuses names not in it.
 - **2026-10-30:** written. Server half about 60% done in `roblox/src` (not yet run in Studio).
 - **2026-10-30:** first strict type check of the written code: 15 problems fixed, among them a require loop (WildPetSpawner ↔ FreezeService), now broken by FreezeService listening to `ProximityPromptService` instead. Only the missing EventService is left.
 - **2026-10-30:** prototype QA says GO ([[Games/Ice Ray for Pets/Prototype QA]]). Owner decisions added (6c). Next: EventService, PenService (with Storage, equip, gates), ShopService, IndexService, MonetizationService, LeaderboardService, then the spawner's personal rares and the client.
+- **2026-10-30:** server finished: EventService, PenService, ShopService, IndexService, MonetizationService, LeaderboardService, DevService (Studio only), personal rares in WildPetSpawner (own roll stream and pity per player). Client written: State, InputController, CameraController, Screen, HudController, PopupController (Pets with Storage and Equip best, Shop, Index, Settings, welcome back, gift), PromptController, PetVisuals, EffectsController, SoundController, SettingsController, SignsController. Strict type check (luau-lsp 1.36.0) is clean for all of `src`. Two bugs found by the check: a comment in Config swallowed the Ice Ray `cubeSize` table (syntax error), and CarryService used a missing `cubeSizeBonus`. Nothing has run in Studio yet.
+- **Left (helper):** server rule tests (section 8 step 5); "the last pet before a gate spawns close by" (6b); world prompts are BillboardGuis, not yet clamped clear of HUD items ([[UI Rules]] › Bounce for Eggs); Super Freeze charges in the shop (needs their products); the overlap check at 844×390, 1024×768 and 1920×1080 (needs Studio).
+- **Differences added:** the camera is Roblox's own follow camera (the prototype's fixed camera looking south would fight Roblox players' habits); popups are Scale with a fixed aspect instead of a UIScale per device; if a Super Freeze receipt arrives after the pet is gone, the player gets a Super Freeze charge (used with a tap later), so Robux is never lost.
+- **Next (owner, in Studio):** `rojo serve`, play solo, then Start Server with 2+ players; the owner items in section 7.

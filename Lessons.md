@@ -2,6 +2,12 @@
 
 What went wrong, why it happened, and the rule that changed because of it. Newest at the top. Every playtest, phone check and piece of feedback lands here, and then the matching rulebook note gets updated.
 
+## 2026-10-30 · Ice Ray for Pets Roblox port (cloud session)
+- **A comment ate code:** `bridgeBonus = 4, -- +2% cube life ... cubeSize = {...} },` put the rest of the line, including a table and its closing brace, inside the comment. Config didn't parse, and every service that read `Config.upgrades` got wrong types. **Rule:** a comment never shares a line with more code after it; run the type check after every Config edit.
+- **"github.com is blocked" was only half true:** `github.com/` answered 400, but the release download `.../releases/download/1.36.0/luau-lsp-linux.zip` worked. The first try used the wrong asset name (`-linux-x86_64.zip`, 404) and looked like a block. The npm package `luau-lsp` is an empty placeholder. **Rule:** try the exact release asset name before calling a host blocked; the working URL is in `roblox/tools/typecheck.sh`.
+- **A clean type check proves little until it fails once:** after the first clean run a planted error showed the checker really reads the files (a line after `return` is only a syntax error). **Rule:** plant one type error inside a function to prove the check runs, then remove it.
+- **Custom-style ProximityPrompts draw nothing on their own.** The server made every prompt `Style = Custom`, so without a client prompt drawer no pet, gate or gift could be used. **Rule:** a port plan lists the client piece for every server object the player touches.
+
 ## 2026-10-30 · Ice Ray for Pets prototype QA (round 1 NO-GO, see [[Games/Ice Ray for Pets/Prototype QA]])
 - **Three reviewers found 56 issues the builder missed** (18 + 16 + 22, plus 11 owner decisions), including a guide arrow pointing backwards and nothing ever melting. **Rule:** the three-reviewer QA is worth its cost; run it before showing a build as done.
 - **The arrow pointed away from the goal** because the chevron was modelled along -z and turned as if along +z. **Rule:** check every direction marker in a screenshot against where it should point.
