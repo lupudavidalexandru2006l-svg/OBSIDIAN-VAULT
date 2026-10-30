@@ -92,5 +92,97 @@ Every prompt starts with the **style block** from [[Games/Ice Ray for Pets/Pet A
 - **Aurora Owl:** The pet: Aurora Owl, a baby owl floating in the air. Emerald aurora-green feathers in chunky clumps, a white face disc, two small feather tufts on its head, a glowing snowflake emblem on its chest. Its wings are spread open and made of glowing flowing aurora ribbons in green, pink and violet that fade to light at the tips, with a trail of tiny glowing light motes behind it. Several glowing neon parts and a soft magical aura.
 - **Snowglobe Drake:** The pet: Snowglobe Drake, a baby dragon. Ruby red with small gold horns, a cream belly, small rounded wings and a short curled tail. On its back it carries a big clear glass snow globe like a turtle shell, with a tiny snowy village and pine trees inside and snow falling in it, the globe glowing softly from inside, a sparkle of magic around it. The strangest and coolest pet of the zone.
 
-### What the other zones need
-Pine Forest, Sunny Beach, Desert Dunes and Volcano still need their 8 pets designed: themes and placeholder ideas are in section 2. Design each zone the same way as the Meadow: cards first (different main colour and silhouette for every pet, the rarity ladder from Common to Secret), the owner approves the roster, then prompts and art.
+### Status
+- **2026-10-29:** all 8 Meadow concepts made and **approved by the owner** (line-up: `pets/snowy-meadow-lineup-v1.png`). Files and log in [[Games/Ice Ray for Pets/Pet Art Recipe]] › 6-7.
+
+## 11. The other zones (drafted 2026-10-29)
+Designed the same way as the Meadow, from section 2's themes: 2 Common, 1 Uncommon, 1 Rare, 1 Epic, 1 Legendary, 1 Mythic, 1 Secret per zone, a different main colour and silhouette for every pet in its zone, rarity extras from [[Games/Ice Ray for Pets/Pet Art Recipe]] › 4. Cold to hot: Forest keeps earthy woodland colours, Beach goes bright, Desert and Volcano go warm (heat contrast, section 3). Every prompt below is a **pet block**: paste it after the locked style block, like the Meadow ones.
+
+**Symbols checked:** no crosses, crescents, stars of David, halos, hieroglyphs, ankhs or eye symbols; emblems are a leaf (Bloomhorn Stag) and a sun gem (Solaris Sphinx). **One exception to heat contrast:** Lavalamp Jelly (Volcano Secret) is cool indigo on purpose so its warm glowing blobs pop; owner can change it.
+
+### 11.1 Pine Forest (zone 2): woodland, pinecones, moss, mushrooms, lanterns
+| Tier | Name | Species / rig | Main colour | Silhouette hook | Signature move | Size |
+|---|---|---|---|---|---|---|
+| Common | **Conehog** | hedgehog / Quadruped | chestnut brown | its whole back is one big pinecone of chunky scales | curls into a pinecone ball and rolls a little loop | S |
+| Common | **Hopsprout** | frog / Quadruped | honey gold | a two-leaf green sprout on top of its head | a big hop, the sprout's leaves flap like wings on the way down | S |
+| Uncommon | **Capmouse** | mouse / Quadruped | plum purple | oversized red mushroom cap with white spots as a hat | hides under its cap, then pops out | S |
+| Rare | **Mossfawn** | deer fawn / Quadruped | deep forest green | moss patches with tiny white flowers along its back, white fawn spots | shakes, and flowers pop open along its back | M |
+| Epic | **Lanternbug** | firefly / Bird | deep indigo | round glowing amber lantern for a back end, curly antennae | blinks its lantern three times; tiny lights blink back around it | S |
+| Legendary | **Mapleguard Bear** | bear cub / Quadruped | crimson red | carved wooden armour plates + crown of branches with orange maple leaves, falling-leaf aura | stomps, and a whirl of maple leaves spins around it | L |
+| Mythic | **Bloomhorn Stag** | stag / Custom (floats) | deep magenta | glowing blossom antlers, glowing hooves, leaf emblem, petal-and-mote trail | rears up and a ring of blossoms blooms on the ground | M |
+| Secret | **Glowshroom Mammoth** | mammoth calf / Custom | midnight teal | a tiny forest of glowing cyan mushrooms on its back, curly vines instead of tusks | shakes its back and glowing spores drift up like fireflies | M |
+
+- **Conehog:** The pet: Conehog, a baby hedgehog. Chestnut brown with a cream face and tummy. Its whole back is one big rounded pinecone made of chunky overlapping clay scales instead of spines. Simplest and cutest, no accessories.
+- **Hopsprout:** The pet: Hopsprout, a baby frog. Honey gold with a cream belly and round toe pads. A little green two-leaf sprout grows from the top of its head like a tiny plant. Simplest and cutest, no accessories.
+- **Capmouse:** The pet: Capmouse, a baby mouse. Plum purple fur with a cream tummy and big round ears. It wears an oversized red mushroom cap with white spots as a hat, and has a long thin curly tail.
+- **Mossfawn:** The pet: Mossfawn, a baby deer fawn. Deep forest green with white fawn spots on its back and a cream chest. Soft patches of moss with tiny white flowers grow along its back and on top of its head like a cap, and two tiny rounded antler nubs.
+- **Lanternbug:** The pet: Lanternbug, a baby firefly. Deep indigo round body with chunky round wings in a lighter violet and two short curly antennae. Its round back end is a glowing warm amber lantern with a small soft glow.
+- **Mapleguard Bear:** The pet: Mapleguard Bear, a baby bear cub sitting up. Deep crimson red fur in chunky clumps with a cream muzzle and belly. It wears smooth carved wooden armour plates on its shoulders and back, and a crown of curling branches with bright orange maple leaves on its head, with a soft aura of falling maple leaves around it.
+- **Bloomhorn Stag:** The pet: Bloomhorn Stag, a baby stag floating in the air with its legs tucked. Deep magenta pink fur in chunky clumps with a cream chest. Its antlers are branches covered in glowing pink and white blossoms, its hooves glow soft white, and a glowing leaf emblem sits on its chest, with a trail of tiny glowing petals and light motes behind it. Several glowing neon parts and a soft magical aura.
+- **Glowshroom Mammoth:** The pet: Glowshroom Mammoth, a baby woolly mammoth. Midnight teal shaggy wool in big chunky clumps, a cream face, and soft curling green vines instead of tusks. A little forest of glowing cyan mushrooms of different sizes grows on its back, lighting it from above, with tiny glowing spores floating around. The strangest and coolest pet of the zone.
+
+### 11.2 Sunny Beach (zone 3): sea and sun, shells, floaties, sunglasses
+| Tier | Name | Species / rig | Main colour | Silhouette hook | Signature move | Size |
+|---|---|---|---|---|---|---|
+| Common | **Puffsy** | pufferfish / Swimmer | tangerine orange | a perfect ball with soft round bumps, tiny fins | puffs up to double size, then deflates with a little toot | S |
+| Common | **Starbit** | starfish / Blob | hot magenta | five chunky arms, standing on two of them | cartwheels across the sand | S |
+| Uncommon | **Flopseal** | seal pup / Swimmer | deep cobalt blue | yellow-and-white striped swim ring round its middle | belly-flops and bounces on its floatie | M |
+| Rare | **Pearlsnail** | snail / Blob | sunny yellow | big spiral shell with pearly pink and gold stripes | hides in its shell and spins like a top | S |
+| Epic | **Glowfin** | dolphin calf / Swimmer | deep sea green | glowing white pearl on its forehead | leaps in an arc and splashes a little rainbow | M |
+| Legendary | **Reefback Turtle** | sea turtle / Swimmer | coral red | a tall coral-reef shell with branching spires and anemones, bubble aura | pulls in, then the reef on its back sways and puffs bubbles | L |
+| Mythic | **Prismapus** | octopus / Custom (floats) | deep orchid purple | eight curling tentacles with rainbow-glowing tips, rainbow gem, bubble trail | spins and paints a rainbow ring in the air | M |
+| Secret | **Beacon Orca** | orca calf / Swimmer (floats) | jet black + white patches | a tiny striped lighthouse on its head with a glowing lamp | the lighthouse beam sweeps a full circle across the server | M |
+
+- **Puffsy:** The pet: Puffsy, a baby pufferfish. Tangerine orange with a cream belly. A perfectly round ball-shaped body covered in soft rounded clay bumps, tiny fins and a small fan tail, floating just above the ground. Simplest and cutest, no accessories.
+- **Starbit:** The pet: Starbit, a baby starfish standing upright on two of its five arms. Hot magenta pink with soft cream dots. Five chunky rounded arms with its face in the middle. Simplest and cutest, no accessories.
+- **Flopseal:** The pet: Flopseal, a baby seal pup. Deep cobalt blue with a white muzzle and belly and short whiskers. It wears a yellow-and-white striped swim ring floatie around its middle.
+- **Pearlsnail:** The pet: Pearlsnail, a baby snail. Sunny yellow soft body with two short round feelers on top of its head. Its big spiral shell has a pearly pattern of pink and gold stripes with a soft shine.
+- **Glowfin:** The pet: Glowfin, a baby dolphin. Deep sea green with a white belly, a round smiling face and a short rounded beak. A glowing white pearl sits on its forehead with a small soft glow.
+- **Reefback Turtle:** The pet: Reefback Turtle, a baby sea turtle. Coral red skin with cream flippers. Its shell is a tall elaborate coral reef with branching coral spires in orange and pink, little round anemones and a few small seashells, with a soft aura of tiny bubbles around it.
+- **Prismapus:** The pet: Prismapus, a baby octopus floating in the air. Deep orchid purple with a cream face patch. Eight short chunky curling tentacles whose tips glow in rainbow colours, a glowing rainbow gem on its forehead, and a trail of glowing bubbles and light motes behind it. Several glowing neon parts and a soft magical aura.
+- **Beacon Orca:** The pet: Beacon Orca, a baby orca floating as if swimming through the air. Jet black with bold white belly and eye patches; its eyes are the same round black eyes with a white shine dot, set in the white patches. On top of its head stands a tiny striped red-and-white lighthouse with a glowing lamp that shines a soft beam of light, with water sparkles around it. The strangest and coolest pet of the zone.
+
+### 11.3 Desert Dunes (zone 4): cactus, sand, gems, sunsets, ancient-toy look
+| Tier | Name | Species / rig | Main colour | Silhouette hook | Signature move | Size |
+|---|---|---|---|---|---|---|
+| Common | **Catcus** | kitten / Quadruped | cactus green | a round cactus-shaped kitten with soft nubs instead of spines | a pink flower pops open on its head | S |
+| Common | **Fenny** | fennec fox / Quadruped | sunset orange | giant ears twice as tall as its head | ears turn like radar, then it pounces | S |
+| Uncommon | **Lumpkin** | camel calf / Quadruped | chocolate brown | one big hump with a woven turquoise-and-gold tasselled blanket | sits down in a puff of sand with a big smile | M |
+| Rare | **Scarabit** | beetle / Custom | royal purple | round dome shell with a turquoise-and-gold mosaic | rolls a ball of sand bigger than itself | S |
+| Epic | **Sunfrill** | frilled lizard / Quadruped | crimson red | a big round neck frill that glows warm gold | flares its frill open like a sunrise | M |
+| Legendary | **Dunehorn Ram** | ram lamb / Quadruped | deep rose pink | huge curled gold horns with turquoise gems, sandstone shoulder plates, sand-swirl aura | headbutt-hop, and a ring of golden sand swirls out | L |
+| Mythic | **Solaris Sphinx** | winged cat / Custom (floats) | rich gold | glowing turquoise feather wings, sun gem on its forehead, sparkle trail | spreads its wings and the sky behind it turns sunset-gold | M |
+| Secret | **Mirage Manta** | manta ray / Swimmer (floats) | deep turquoise teal | a tiny oasis with a pool and a palm tree on its back | dives into the sand and surfaces somewhere else in a shimmer | M |
+
+- **Catcus:** The pet: Catcus, a baby kitten shaped like a round cactus. Cactus green with a cream muzzle, and soft round clay nubs dotted over its body instead of spines. Pointed cat ears and a short stubby tail. Simplest and cutest, no accessories.
+- **Fenny:** The pet: Fenny, a baby fennec fox. Sunset orange with a cream face, chest and inner ears. Giant ears twice as tall as its head, standing straight up. Simplest and cutest, no accessories.
+- **Lumpkin:** The pet: Lumpkin, a baby camel. Chocolate brown with a cream muzzle, knobbly knees and one big round hump. Over its hump it wears a woven saddle blanket in turquoise and gold with little tassels.
+- **Scarabit:** The pet: Scarabit, a baby beetle. Royal purple with a big round dome shell covered in a shiny mosaic pattern of turquoise and gold tiles, six short stubby legs and two little round feelers.
+- **Sunfrill:** The pet: Sunfrill, a baby frilled lizard. Crimson red with a cream belly and a long curling tail. Around its neck is a big round frill like a collar that glows warm gold with a small soft glow.
+- **Dunehorn Ram:** The pet: Dunehorn Ram, a baby ram lamb. Deep rose pink wool in big chunky clumps with a cream face. Huge curled gold horns set with turquoise gems, smooth sandstone armour plates on its shoulders, and a soft aura of swirling golden sand around it.
+- **Solaris Sphinx:** The pet: Solaris Sphinx, a baby winged cat floating in the air. Rich gold fur in chunky clumps with a cream muzzle. Wings of glowing turquoise feathers, a glowing sun gem on its forehead, a glowing turquoise tail tip, and a trail of golden sparkles and light motes behind it. Several glowing neon parts and a soft magical aura.
+- **Mirage Manta:** The pet: Mirage Manta, a baby manta ray gliding through the air. Deep turquoise teal with a cream underside and a glowing gold pattern of dots along its wings. On its back sits a tiny oasis with a little pool of water and one palm tree, with shimmering heat sparkles trailing behind it. The strangest and coolest pet of the zone.
+
+### 11.4 Volcano (zone 5): lava, obsidian, embers, crystals, friendly
+| Tier | Name | Species / rig | Main colour | Silhouette hook | Signature move | Size |
+|---|---|---|---|---|---|---|
+| Common | **Emberpup** | puppy / Quadruped | tangerine orange | its tail is a rounded flame shape | chases its flame tail in a circle | S |
+| Common | **Magmallow** | lava slime / Blob | raspberry red | a gumdrop blob with a toasted marshmallow cap melting over its top | squashes flat, then boings up | S |
+| Uncommon | **Obby** | rhino calf / Quadruped | obsidian black | one short round horn + chunky orange goggles on its forehead | charges three steps and skids to a stop | M |
+| Rare | **Sizzlemander** | salamander / Quadruped | lime green | big round black spots, long curling tail, little smoke puffs | sizzles, and smoke rings float up | S |
+| Epic | **Flarechick** | phoenix chick / Bird | hot magenta | a flame-shaped crest that glows orange and gold | flaps, and its crest flares into a big flame | S |
+| Legendary | **Geodillo** | armadillo / Quadruped | royal purple | back plates that are split-open geodes of glowing crystals, crystal crown, ember aura | rolls into a crystal ball and spins | L |
+| Mythic | **Pyrokoi** | koi fish / Swimmer (floats) | molten gold | long fins and tail of glowing lava ribbons, ember trail | swims a loop and leaves a ring of embers | M |
+| Secret | **Lavalamp Jelly** | jellyfish / Blob (floats) | cobalt indigo | a glassy bell with glowing lava-lamp blobs drifting inside | its blobs rise and pop into sparkles over everyone | M |
+
+- **Emberpup:** The pet: Emberpup, a baby puppy. Tangerine orange with a cream muzzle and chest and round floppy ears. Its tail is a rounded clay flame shape in orange and yellow, solid and not glowing. Simplest and cutest, no accessories.
+- **Magmallow:** The pet: Magmallow, a baby lava slime. A soft round raspberry red blob shaped like a gumdrop, with a cream face and a toasted marshmallow cap melting over its top. Simplest and cutest, no accessories.
+- **Obby:** The pet: Obby, a baby rhino. Obsidian black skin in chunky smooth plates with a warm grey face and belly and one short rounded horn. It wears chunky orange safety goggles pushed up on its forehead.
+- **Sizzlemander:** The pet: Sizzlemander, a baby salamander. Lime green with big round black spots all over its back, a cream belly and a long curling tail, with little round clay smoke puffs rising from its back.
+- **Flarechick:** The pet: Flarechick, a baby phoenix chick. Hot magenta pink round fluffy body with a cream belly, a small orange beak and tiny wings. On top of its head is a crest shaped like a flame that glows bright orange and gold, with a small soft glow.
+- **Geodillo:** The pet: Geodillo, a baby armadillo. Royal purple with a cream face and belly. Its back is covered in big armour plates that are split-open geodes full of glowing amethyst and orange crystals, with a small crown of crystals on its head and a soft aura of drifting embers around it.
+- **Pyrokoi:** The pet: Pyrokoi, a baby koi fish floating in the air. Molten gold body in chunky smooth scales with a cream belly. Its long flowing fins and tail are ribbons of glowing lava orange and red that fade to light at the tips, with a trail of glowing embers and light motes behind it. Several glowing neon parts and a soft magical aura.
+- **Lavalamp Jelly:** The pet: Lavalamp Jelly, a baby jellyfish floating in the air. A deep cobalt indigo glassy bell with a cute face on the front and short chunky curling tentacles. Inside the bell, big soft glowing orange and pink blobs float slowly like a lava lamp, with a soft warm glow and sparkles around it. The strangest and coolest pet of the zone.
+
+### Status of the other zones
+- **2026-10-29:** rosters and prompts drafted by the builder. The owner said to carry on without stopping, so concepts follow zone by zone (one pet first per zone).
