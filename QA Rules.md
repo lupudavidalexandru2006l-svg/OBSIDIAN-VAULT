@@ -56,7 +56,20 @@ Each finding gets an id (PT-01, CA-01, DR-01) so fixes can be tracked.
 - Keep the Studio window visible: a hidden window freezes rendering, so visual checks can't be done.
 - Dev commands (grant item, force pity, skip act) make rare paths testable; strip or lock them in live servers.
 
-## 9. The verdict
+## 9. The report (owner's format, 2026-10-30)
+Every QA pass ends in one HTML report, published as an artifact, in the format of the owner's reference (https://claude.ai/artifact/HAu7wRNkGdxzLWQhTU2heJ). Reviewers return their findings as text; the main session builds the page.
+1. **Header:** game, pass number and date, a short scope paragraph.
+2. **Two verdicts at the top:** release (GO / NO-GO + open blocker count) and fun (GO / NO-GO + the scenario that was played).
+3. **Fun levels by age group** (5-7, 8-11, 12-15, 16-18), each out of 10 with the previous pass's score.
+4. **Release blockers**, numbered in fix order.
+5. **All tickets**, filterable by severity (Game-breaking, High, Medium, Moderate, Low), by area (Economy, UI, Performance, Map, Systems, Security, Policy, Social, Code) and "new only". Each ticket: a stable id QA-01..., a bold one-line title, the evidence (numbers, screenshots), the reviewer id it came from (PT/CA/DR), status (open, fixed, partly fixed).
+6. **Changes since the last pass:** ticket, status, evidence.
+7. **Scorecard:** area, score, previous score, evidence, compared with named similar games.
+8. **Economy:** bot timings, odds, prices, Robux offers. **Performance:** what was measured, where.
+9. **What's good**, **what this pass did not cover**, and a footer (checklist used, link to the previous pass, test setup, save state).
+Look: light and dark theme, severity colours as a stripe on each ticket, tables in scroll boxes, readable at phone width.
+
+## 9b. The verdict
 - A plain **GO** or **NO-GO**.
 - A NO-GO lists each issue with: **where** (script / object / position), **how to reproduce**, **how bad** (blocker / should fix / small), and a suggested fix.
 - Split out **owner items** (product ids, badge ids, real-phone tests) that a helper can't do, and **owner decisions** (odds, prices) that are questions, not bugs.

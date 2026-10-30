@@ -74,11 +74,11 @@ Original, silly creatures, each looking like its name. Each zone has 7 regular p
 |---|---|---|---|
 | Common | 60% | 90 s | 1 |
 | Uncommon | 25% | 70 s | 3 |
-| Rare | 10% | 50 s | 10 |
-| Epic | 4% | 40 s | 30 |
-| Legendary | 0.9% | 30 s | 100 |
-| Mythic | 0.1% | 25 s | 400 |
-| Secret | 1 in 20,000 (every zone) | 20 s | 1,500 |
+| Rare | 10% | 30 s | 10 |
+| Epic | 4% | 22 s | 30 |
+| Legendary | 0.9% | 16 s | 100 |
+| Mythic | 0.1% | 12 s | 400 |
+| Secret | 1 in 20,000 (every zone) | 8 s | 1,500 |
 
 - Income × **4 per zone** (a Volcano common out-earns a Meadow epic).
 - **Cube life = base × ray bonus ÷ heat**, with sun/shade on top.
@@ -126,7 +126,7 @@ Mutations stack (a Giant Golden Mid-Sneeze Frostfox is the kind of flex teens ch
 
 | Upgrade | Effect per level |
 |---|---|
-| Ice Ray | +20% cube life, +4 s bridge time |
+| Ice Ray | +2% cube life, bigger cubes, +4 s bridge time |
 | Boots | +8% run speed |
 | Backpack | +1 carry slot (max 5); each extra cube slows you 8% |
 | Pen | +5 earning slots (the pen starts with 10) |
@@ -300,3 +300,4 @@ All prices live in `Config.monetization` so they can be tested and changed.
 - **2026-10-29:** pet style locked (soft clay) and the 3D method proven on Frostfox (Weave Rodin V2); see [[Games/Ice Ray for Pets/Pet Art Recipe]]. The one-prompt handoff for building the whole game is [[Games/Ice Ray for Pets/Build Prompt]].
 - **2026-10-30:** HTML prototype built and published (`prototype/ice-ray-for-pets/`), with a zone temperature added at the owner's request (§ 4). The port plan, with the owner list, is [[Games/Ice Ray for Pets/Port Plan]]. Prototype QA running.
 - **2026-10-30:** prototype QA round 1 NO-GO, round 2 fixes in ([[Games/Ice Ray for Pets/Prototype QA]]). Owner decisions the same day: pen of 10 + Storage + equip by hand / Equip best; the Forest opens with 1,000 coins; earnings while away 25%; test switches for heat and Ice Ray level instead of changing melt numbers; Roblox servers of 6 with shared commons and personal rares.
+- **2026-10-30:** melting tuned with the owner: Ice Ray +2% cube life a level (was +20%, which made every cube safe); Rare-and-up cube lives cut to 30 / 22 / 16 / 12 / 8 s so Commons are easy and Secrets are hard (the free re-zap still always works). Bot check: Commons 0 of 416 would melt at kid pace.
