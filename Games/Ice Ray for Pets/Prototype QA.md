@@ -88,12 +88,43 @@ Not changed, and why:
   - Forest open at 35-45 s (≈ 1.5-1.9 min kid time); Forest reached at 49-58 s.
   - Funnel steps arrive in order. The pen is full (100) by 900 s. 0 melts.
 
-## Owner decisions
-Asked on 2026-10-30 (answers below when they come):
-1. **Forest gate size.** The Game Plan says 8 pets (§ 4) and Forest at 5-10 min of kid time (§ 17); 8 pets now opens it at about 1.5 min. The pen reached 15 pets at 66-73 s, 20 at 86-95 s, 25 at 106-114 s and 30 at 126-134 s of bot time (× 2.5 for kid time).
-2. **Melt tension in the first two zones.** Nothing melts: Ice Ray upgrades make every Meadow and Forest cube safe. The Game Plan's questions (is the run home fun? Super Freeze help or nag?) can't be answered yet.
-3. **Earnings while away.** 100% for up to 8 h pays millions of coins a night later on, past every gate.
-4. **Port: wild pets shared by the server or personal** (rare rolls, pity).
+## Owner decisions (answered 2026-10-30)
+1. **Forest gate → coins, and the pen gets a limit.** The pen holds 10 earning pets (+5 per Pen upgrade); every other banked pet waits in Storage. Players equip by hand or press Equip best. The Forest opens with coins: 1,000 lands at 118-144 s of bot time (≈ 4.9-6 min kid time) on 4 seeds. (The owner first suggested a pen "storage of 10" and gates that don't count the pen; Equip best and manual equip were their additions.)
+2. **Melting → test switches,** not new melt numbers: the test panel sets the Forest's heat (0.8 / 1.2 / 1.6 / 2.2) and the Ice Ray level (1 / 5 / 10).
+3. **Earnings while away → 25%,** still capped at 8 h.
+4. **Roblox servers → 6 players,** Common and Uncommon pets shared, Rare and up personal with each player's own pity.
+
+## Round 3 (after the decisions)
+- **New bug found and fixed:** client movement checked only where a step ends while the server checks the whole path, so a diagonal step off the free bridge's corner was sent back forever (the bot stood at x -62, z 182 for 600 s). The client now uses the same path check.
+- **Pets:**
+  - An old save without pen flags puts its 10 best pets in the pen and 4 in Storage. Only the pen earns.
+  - A full pen refuses a stored pet, a manual swap works, and Equip best picks the top earners.
+  - The Pen upgrade gives 15 slots and fills them from Storage.
+- **Gate and switches:** holding the gate prompt pays 1,000 and opens it. The heat switch works in the page.
+- **Suites:**
+  - auditor's suite 67 / 0 FAIL in both time zones
+  - exploit test 11 / 0 FAIL
+  - layout clean on phone, tablet and PC (only the touch thumbstick, by design)
+  - 0 console errors
+- **Bot, 3 seeds × 900 s:** Forest open at 118-135 s; all 8 funnel steps fire (step 7 "first rare" can come after step 8 "first new zone"; both orders are normal); 0 errors.
+
+## Design finding for the owner: melting almost never happens
+The heat switch works (Forest heat 2.2 confirmed in the page), but even at **Volcano heat with the Ice Ray kept at level 1**, the bot saw **0 melts in 900 s**:
+- by the Forest it has Boots 15, so the run home from the far Forest is about 11 s;
+- it mostly carries Commons (41 s of life at heat 2.2);
+- it heads home when a cube gets low.
+
+With the Game Plan's upgrade numbers (Ice Ray +20% life a level, Boots +8% speed a level, both linear), a few upgrades outgrow any heat on a map this size. A Mythic at Volcano heat lasts 20 s at Ray 5 and 32 s at Ray 10.
+
+Melting will only bite on much longer runs (zones 4-5) or with smaller upgrade steps. **Before Sunny Beach is built:** decide between smaller late Ice Ray and Boots steps, longer runs, or calmer melting as the design. The test switches let anyone feel a hot run now (Ray 1, heat 2.2, sun: an Epic lasts about 12 s).
+
+## Verdict: GO for the port
+- All 6 round-1 blockers are fixed and re-checked, along with every should-fix and small item except those listed under "Not changed".
+- The owner's decisions are built and tested.
+- **Owner items before or at the Studio QA:** a real phone and tablet (frame rate on Low and normal graphics, notch, safe areas), a real controller, the Server Size set to 6, and the Super Freeze developer product id.
+- **Owner decisions for later:**
+  - the melting finding above;
+  - the Sunny Beach price, which is now cheaper than the Forest (500 vs 1,000).
 
 ## Research check (owner request 2026-10-30)
 Every note in `Research/` checked against the prototype.
@@ -115,4 +146,4 @@ Every note in `Research/` checked against the prototype.
 - **[[Research/Game Page Art]]:** applies at pipeline step 9 (page art). The one rule that matters now: the first 3 minutes must match the thumbnail, and the loop shows in the first 30 s.
 
 ## Status
-- **2026-10-30:** round 1 NO-GO; round 2 fixes in (Halloween repo commit 5772181, artifact version 5); waiting on owner decisions, then the verdict.
+- **2026-10-30:** round 1 NO-GO; round 2 fixes in (Halloween repo commit 5772181, artifact version 5); owner decisions built (commit 9ef17dd, artifact version 6); **GO for the port**.

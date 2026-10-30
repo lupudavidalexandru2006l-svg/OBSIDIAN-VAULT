@@ -32,7 +32,7 @@ The full plan for the freeze-and-run slop. Built from [[Brainstorms/2026-10-29 U
 2. Walk up → hold the **Freeze** prompt (1 s) → *fwoosh*, the bunny is in an ice cube on your back. (Reward 1, about 5 s.)
 3. The arrow points home. Walk 10 steps, drop it in the pen → the cube cracks, the bunny pops out, dances, and coins start ticking. (About 15 s.)
 4. A second and third pet are right there. By about 60-90 s you can afford **Ray Lv 2**, and the next cube is visibly bigger.
-5. The goal bar says **"Unlock Pine Forest: 8 pets in your pen"**.
+5. The goal bar says **"Unlock Pine Forest: 120 / 1,000"** (coins; owner 2026-10-30, was "8 pets in your pen").
 
 No tutorial text: arrows, glow and the world teach it.
 
@@ -51,12 +51,13 @@ The hub (your pen + everyone's pens) sits at the cold north end. Zones get **hot
 | # | Zone | Heat (melt ×) | Temperature | Gate (commons only) | Feature |
 |---|---|---|---|---|---|
 | 1 | Snowy Meadow | 0.5 | -5°C (23°F) | open | learn to freeze |
-| 2 | Pine Forest | 0.8 | 4°C (39°F) | 8 pets in pen | lots of shade, first ice-bridge river |
-| 3 | Sunny Beach | 1.2 | 16°C (61°F) | 500 coins | sun patches, shady palm routes, ice slides |
+| 2 | Pine Forest | 0.8 | 4°C (39°F) | 1,000 coins | lots of shade, first ice-bridge river |
+| 3 | Sunny Beach | 1.2 | 16°C (61°F) | 500 coins (re-price when built: now cheaper than the Forest) | sun patches, shady palm routes, ice slides |
 | 4 | Desert Dunes | 1.6 | 28°C (82°F) | 25,000 coins | almost no shade, sled hills, oasis shortcuts |
 | 5 | Volcano | 2.2 | 46°C (115°F) | 1.2M coins | lava you freeze into stepping stones; Lava mutation |
 | hub | your pen | 0.3 | -11°C (12°F) | | the cold north end |
 
+- **Gates open with coins** (owner 2026-10-30): walk up to the gate and hold its prompt to pay. The Forest was "8 pets in pen"; once the pen got a slot limit (section 11), a pen count couldn't be a gate any more. 1,000 coins opens it at about 5.5 min of kid time (bot × 2.5).
 - **Temperature** (owner request 2026-10-30): every zone has a temperature, and it changes with everything that changes melting, because it is worked out from the melt speed: **°C = -20 + 30 × melt speed**. So shade makes it colder, sun hotter, night colder, and the Big Chill drops it to -20°C (nothing melts). Examples: Meadow shade -12°C, Meadow sun 3°C, Forest shade -8°C, Beach sun 34°C, Volcano sun 79°C. It never changes the melt numbers above; it only shows them. Shown as a small thermometer chip beside the goal bar (HUD item 5 of 5; the cube itself still shows time left, no melt timer) and on every zone sign. °C by default, °F in Settings. The colour of the chip goes cold blue → teal → orange → red.
 
 - **Shade**: trees, cliffs, tunnels and drifting cloud shadows melt cubes at ×0.5. Sun patches at ×1.5. Learning the shady routes is the teen skill.
@@ -128,8 +129,10 @@ Mutations stack (a Giant Golden Mid-Sneeze Frostfox is the kind of flex teens ch
 | Ice Ray | +20% cube life, +4 s bridge time |
 | Boots | +8% run speed |
 | Backpack | +1 carry slot (max 5); each extra cube slows you 8% |
-| Pen | +5 pet slots |
+| Pen | +5 earning slots (the pen starts with 10) |
 
+- **Pen and Storage** (owner 2026-10-30): the pen holds 10 pets to start, and only the pen's pets earn coins. Every other pet you bank goes to **Storage**: kept forever, shown in the Index, it just doesn't earn. Nothing is ever taken away. New pets fill empty pen slots first.
+- **Pets menu**: tap a pet to move it between the pen and Storage, or press **Equip best** to fill the pen with the top earners. A red "!" on the Pets tile when a stored pet would earn more than one in the pen.
 - **Index**: one page per zone (regular pets × Normal/Golden/Rainbow) + a Hybrid page + a Pose album. **Completing a zone page = +10% coins forever.** Silhouettes show what's missing.
 - **Rebirth** (from Desert): resets coins, upgrades and zone unlocks; **keeps pets and the index**. Gives +50% coins forever, a new ray color and the next **ice palace** stage for your pen.
 - **Deep freeze vault** (later): store cubes and thaw them during a 2x event.
@@ -244,12 +247,12 @@ All prices live in `Config.monetization` so they can be tested and changed.
 - **Felt upgrade:** bigger cubes, faster boots, longer bridges.
 - **Small frequent wins:** a pet banked every loop, rising chimes on streaks.
 - **Unfinished collection:** index silhouettes.
-- **Welcome back:** "Your pets earned 12,400 coins while you were away" + Collect, stamped at once (no double claim).
+- **Welcome back:** "Your pets earned 12,400 coins while you were away" + Collect, stamped at once (no double claim). The pen earns **25%** of its income while you're away, up to 8 hours (owner 2026-10-30), and the popup shows your best pet from last time.
 
 ## 17. Prototype scope (Stage 1, HTML)
 `prototype/ice-ray-for-pets/index.html`, three.js 3D, published as an artifact.
 
-**In:** hub + Meadow + Forest, 8 pets, freeze → carry → melt, shade and sun patches, pose freeze, one ice-bridge river, pen income, Ray / Boots / Backpack upgrades, index page, Big Chill, welcome-back gift, goal bar, odds on the zone sign, a **mock Super Freeze button** (no real money in the prototype) to test where it shows. Test tools: playtest bot (`?bot=1`) and the timer panel (T).
+**In:** hub + Meadow + Forest, 16 pets (both zones' rosters; the plan first said 8), freeze → carry → melt, shade and sun patches, pose freeze, one ice-bridge river, pen income, Ray / Boots / Backpack / Pen upgrades, Pets menu with Storage and Equip best, index page, Big Chill, welcome-back gift, goal bar, odds on the zone sign, a **mock Super Freeze button** (no real money in the prototype) to test where it shows. Test tools: playtest bot (`?bot=1`), the timer panel (T), and test switches for the Forest's heat and the Ice Ray level (to feel a hot run).
 
 **Out (later):** hybrids, giant cubes, snowballs, rebirth, night, boss, penguins, vault, palace, the rest of the shop.
 
@@ -273,6 +276,8 @@ All prices live in `Config.monetization` so they can be tested and changed.
 | `DataService` (pcall + retries, save on leave and BindToClose) | `ServerScriptService` |
 | Cube melt effects, camera, HUD | `StarterPlayerScripts`, `StarterGui` |
 
+**Servers** (owner 2026-10-30): up to **6 players**, one pen each. Common and Uncommon wild pets are shared by everyone; Rare and up spawn just for one player (only they see and can freeze it), each player with their own pity, so a faster kid never grabs your Rare.
+
 **Security:** the server decides the freeze (distance + cooldown), the pose, the melt time and the bank (must be inside your own pen). The client only plays the effects. All rolls are on the server. Every developer product is granted only inside `ProcessReceipt`, saved before returning `PurchaseGranted`, so a crash never loses a purchase or grants it twice.
 
 ## 19. Risks
@@ -294,3 +299,4 @@ All prices live in `Config.monetization` so they can be tested and changed.
 - **2026-10-29:** the global rules now allow everything in section 15 (CLAUDE.md, the kids-roblox-game-design skill and [[Roblox Setup/Game Design Rules]] › 10), so section 15 is no longer an exception for this game, just the standard rules applied.
 - **2026-10-29:** pet style locked (soft clay) and the 3D method proven on Frostfox (Weave Rodin V2); see [[Games/Ice Ray for Pets/Pet Art Recipe]]. The one-prompt handoff for building the whole game is [[Games/Ice Ray for Pets/Build Prompt]].
 - **2026-10-30:** HTML prototype built and published (`prototype/ice-ray-for-pets/`), with a zone temperature added at the owner's request (§ 4). The port plan, with the owner list, is [[Games/Ice Ray for Pets/Port Plan]]. Prototype QA running.
+- **2026-10-30:** prototype QA round 1 NO-GO, round 2 fixes in ([[Games/Ice Ray for Pets/Prototype QA]]). Owner decisions the same day: pen of 10 + Storage + equip by hand / Equip best; the Forest opens with 1,000 coins; earnings while away 25%; test switches for heat and Ice Ray level instead of changing melt numbers; Roblox servers of 6 with shared commons and personal rares.

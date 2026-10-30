@@ -1,7 +1,7 @@
 ---
 created: 2026-10-30
 tags: [roblox, ice-ray-for-pets, port]
-status: draft, waiting on prototype QA GO
+status: prototype QA GO (2026-10-30); port in progress
 ---
 
 # Ice Ray for Pets · Port Plan
@@ -21,7 +21,7 @@ Nobody but the owner changes a thing. Everyone else calls the owner or listens t
 | Wild pets (spawn, odds, pity, wander, despawn) | `WildPetSpawner` | server |
 | Freezing (prompt checks, pose, hold time), the ice bridge spot and its timer | `FreezeService` | server |
 | Carried cubes and melting, Super Freeze offer | `CarryService` | server |
-| Coins, income, banking, welcome back, daily gift (connects the gift box prompt) | `PenService` | server |
+| Coins, income, banking, welcome back, daily gift (connects the gift box prompt), pen slots, Storage, equip / Equip best, zone gates (pay coins at the gate) | `PenService` | server |
 | Upgrade prices and buying | `ShopService` | server |
 | Index pages and page rewards | `IndexService` | server |
 | Big Chill | `EventService` | server |
@@ -116,9 +116,27 @@ One list in `Config.analytics`; `AnalyticsSvc` refuses names not in it.
 - **Pen upgrade** (+5 slots, Game Plan 11) before launch; the prototype just uses 100 slots.
 - **Gamepad:** `GuiService.SelectedObject` for menus, ButtonB closes, ButtonY presses the Super Freeze button.
 
+## 6c. Owner decisions (2026-10-30)
+- **6 players a server** (`Config.server.maxPlayers`), 6 pens in two rows of three (`Config.world.plots`).
+- **Shared commons, personal rares** (`Config.spawner.personalRares`):
+  - Each player has their own spawn roll stream with their own pity. A roll that lands Common or Uncommon goes into the shared zone pool (up to `maxPerZone`). A roll of Rare or up spawns a pet only that player can see and freeze (up to `personalMaxPerZone`): `OwnerUserId` on the root.
+  - Each client hides other players' personal pets (`prompt.Enabled = false` locally, no model drawn), and `FreezeService` refuses anyone else.
+  - The zone sign shows your own odds (`Notify` to each player rather than one shared SurfaceGui).
+- **Pen and Storage:**
+  - `PetEntry.eq` marks the pen's pets; only they earn. Banking fills empty slots, else the pet goes to Storage.
+  - `EquipPet(id, on)` and `EquipBest()` are new remotes (types checked, rate-limited, "pen full" refused on the server).
+  - The Pen upgrade fills new slots from Storage.
+  - A Pets tile and menu on the client.
+- **Zone gates with coins:**
+  - A ProximityPrompt at each gate; the server checks distance, `zone.gateCoins` and coins. It takes the coins and unlocks the zone in one `UpdateAsync`, and logs `first_coins_spent`.
+  - The Forest is 1,000. Sunny Beach (500) must be re-priced when built.
+- **Away 25%** (`Config.away.rate`).
+- **Dev commands, Studio only:** Forest heat and Ice Ray level switches, for testing hot runs.
+
 ## 7. Owner items (a helper can't do these)
 - Open the Rojo project in Studio on the owner's PC (`rojo serve roblox/default.project.json`) and run the Studio QA.
 - Create the **Super Freeze** developer product (15 R$) and paste its id in `Config.monetization`.
+- Set the place's **Server Size to 6** (Game Settings > Places).
 - Optional: a badge for the weekly top 3 (`Config.leaderboards.weeklyBadgeId`).
 - Upload the pet models (the Roblox GLBs under 7,500 triangles) and paste the asset ids into `PetDefs`.
 - Pick or upload sounds and paste the ids into `Config.sounds` (0 = silent until then).
@@ -133,5 +151,6 @@ One list in `Config.analytics`; `AnalyticsSvc` refuses names not in it.
 6. Studio session on the owner's PC: build the world look, insert models, then Studio QA solo and with 2+ players in Start Server ([[QA Rules]] › 7, 8).
 
 ## Status
-- **2026-10-30:** written. Server half about 60% done in `roblox/src` (not yet run in Studio). Waiting on the prototype QA verdict.
+- **2026-10-30:** written. Server half about 60% done in `roblox/src` (not yet run in Studio).
 - **2026-10-30:** first strict type check of the written code: 15 problems fixed, among them a require loop (WildPetSpawner ↔ FreezeService), now broken by FreezeService listening to `ProximityPromptService` instead. Only the missing EventService is left.
+- **2026-10-30:** prototype QA says GO ([[Games/Ice Ray for Pets/Prototype QA]]). Owner decisions added (6c). Next: EventService, PenService (with Storage, equip, gates), ShopService, IndexService, MonetizationService, LeaderboardService, then the spawner's personal rares and the client.
