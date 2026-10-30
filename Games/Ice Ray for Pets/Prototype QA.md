@@ -131,7 +131,7 @@ Every note in `Research/` checked against the prototype.
 - **[[Research/Game Psychology]]:**
   - Already in the build: sure-to-come rewards with shown odds (2); the goal bar from the first pet (3, 4); silhouettes and a set bonus (5); a 5-year-old core loop with shade routes and pose timing as the teen skill (6).
   - Now in the build: feedback scaled by rarity with rising-pitch streaks (7). Board text that never shames ("not on the board yet", "not in the top 100 yet") (10). The paid button separated from the free one, the Epic FTC dark-pattern lesson (13).
-  - Added in round 2: the last step to the Forest is faster (3: one pet short, a pet appears close by), and the welcome back shows your best pet from last time (8, using the Lessons rule that the recap goes on the return).
+  - Added in round 2: the welcome back shows your best pet from last time (8, using the Lessons rule that the recap goes on the return). A "last step faster" pet (3) was added too, then removed when the Forest gate became coins; the goal bar now says "go open the gate!" the moment you can afford it.
   - Gaps for the full game, not the prototype:
     - customization and pet naming (1, 9)
     - a pet that follows you (9)
