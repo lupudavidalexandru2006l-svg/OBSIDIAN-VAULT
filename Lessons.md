@@ -2,6 +2,15 @@
 
 What went wrong, why it happened, and the rule that changed because of it. Newest at the top. Every playtest, phone check and piece of feedback lands here, and then the matching rulebook note gets updated.
 
+## 2026-10-30 · Ice Ray for Pets prototype: reading, looks and tooling
+- **Five rule notes were skipped at the start** and the owner had to ask twice ("did u even read the vault?"). The prototype then broke rules those notes set. **Rule:** read every note in the vault root (including Research and Brainstorm) before the first line of code, and name the notes read in the first progress message.
+- **"The game looks shit"** after the first playable build: flat colours, bare primitive props, default lights, a plain ground plane. **Fix that worked:** gradient sky, noise terrain with vertex colours, merged and instanced props with rounded shapes, ACES tone mapping, soft shadows that follow the player, room-style environment light, and the painted icons in the HUD. **Rule:** a prototype gets its look pass before the owner first sees it, not after.
+- **Shadows ran at 1.5 fps in the software renderer.** **Rule:** every prototype has a Low graphics setting from day one (no shadows, fewer props), remembered between visits ([[QA Rules]] › 4 slow phone).
+- **A tree filled the screen at the river.** **Rule:** props between the camera and the player sink out of the way; check the camera at every landmark.
+- **Controls were mirrored** because the camera looks south. **Rule:** test movement against the screen (push right, go right), never against the world axes.
+- **The rate limit used real time,** so the sped-up bot had calls dropped. **Rule:** rate limits run on the same clock as the game.
+- **The helper tools need Python and Node,** which the owner's PC doesn't have. **Rule:** cloud-only tools say so in a `tools/README.md`; anything the owner must run at home (like downloading expiring art links) gets a PowerShell version.
+
 ## 2026-10-29 · Building Ice Ray for Pets in a cloud session
 - **The vault notes disagreed on Secret pets:** the Game Plan said Secrets only in zones 4-5, the Pet Brief gave every zone one. **Owner's call:** first zones 4-5 only, then (once it meant cutting Snowglobe Drake) a Secret in every zone. **Rule:** when two notes disagree, ask, show what each answer costs (here: losing a designed pet), then fix both notes the same day.
 - **The cloud sandbox blocks `www.figma.com`,** so a `generate_image` result can't be downloaded with curl (403), and the network settings had no edit option for the owner. **Fix that worked:** `get_screenshot` on the new image's node (`maxDimension 1024`, `contentsOnly true`, `enableBase64Response true`) sends the full 1024 px PNG inline for free. **Rule:** in a cloud session, fetch every generated image this way straight after generating it ([[Games/Ice Ray for Pets/Pet Art Recipe]] › 7).
