@@ -3,7 +3,7 @@
 What went wrong, why it happened, and the rule that changed because of it. Newest at the top. Every playtest, phone check and piece of feedback lands here, and then the matching rulebook note gets updated.
 
 ## 2026-10-30 · Ice Ray for Pets prototype QA (round 1 NO-GO, see [[Games/Ice Ray for Pets/Prototype QA]])
-- **Three reviewers found 64 issues the builder missed,** including a guide arrow pointing backwards and nothing ever melting. **Rule:** the three-reviewer QA is worth its cost; run it before showing a build as done.
+- **Three reviewers found 56 issues the builder missed** (18 + 16 + 22, plus 11 owner decisions), including a guide arrow pointing backwards and nothing ever melting. **Rule:** the three-reviewer QA is worth its cost; run it before showing a build as done.
 - **The arrow pointed away from the goal** because the chevron was modelled along -z and turned as if along +z. **Rule:** check every direction marker in a screenshot against where it should point.
 - **A "fix" can regress:** the new movement budget allowed one 8-stud step, which hopped the thin locked-gate line. **Rule:** checks along a move, not just at its end; re-run the whole suite after every fix round.
 - **A test failing after a fix can be the test, not the game:** five checks still expected the old rules, the play-tester's bridge script used the old bridge spots, and its fake gamepad mashed every button at once. **Rule:** when a rule changes on purpose, update the check to test the new rule and say so in the QA note.
