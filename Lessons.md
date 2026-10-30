@@ -2,6 +2,15 @@
 
 What went wrong, why it happened, and the rule that changed because of it. Newest at the top. Every playtest, phone check and piece of feedback lands here, and then the matching rulebook note gets updated.
 
+## 2026-10-30 · Ice Ray for Pets prototype QA (round 1 NO-GO, see [[Games/Ice Ray for Pets/Prototype QA]])
+- **Three reviewers found 64 issues the builder missed,** including a guide arrow pointing backwards and nothing ever melting. **Rule:** the three-reviewer QA is worth its cost; run it before showing a build as done.
+- **The arrow pointed away from the goal** because the chevron was modelled along -z and turned as if along +z. **Rule:** check every direction marker in a screenshot against where it should point.
+- **A "fix" can regress:** the new movement budget allowed one 8-stud step, which hopped the thin locked-gate line. **Rule:** checks along a move, not just at its end; re-run the whole suite after every fix round.
+- **A test failing after a fix can be the test, not the game:** five checks still expected the old rules, the play-tester's bridge script used the old bridge spots, and its fake gamepad mashed every button at once. **Rule:** when a rule changes on purpose, update the check to test the new rule and say so in the QA note.
+- **Software rendering drops button presses** at 2-5 fps, so gamepad checks flake. **Rule:** hold fake button presses for 400 ms+, and leave the final say to a real controller (owner item).
+- **The playtest bot can hide a design problem:** with pets always close, the bot never left the Meadow and never banked a Rare, so its timings said nothing about the Forest. **Rule:** when spawning changes, re-check that the bot still plays like a kid (chases glows, goes to the new zone).
+- **Hiding a "+0" made a box grow later** (the +N/s line appears with the first income), which broke the phone layout. **Rule:** the Screen layout re-runs when a HUD box changes size.
+
 ## 2026-10-30 · Ice Ray for Pets prototype: reading, looks and tooling
 - **Five rule notes were skipped at the start** and the owner had to ask twice ("did u even read the vault?"). The prototype then broke rules those notes set. **Rule:** read every note in the vault root (including Research and Brainstorm) before the first line of code, and name the notes read in the first progress message.
 - **"The game looks shit"** after the first playable build: flat colours, bare primitive props, default lights, a plain ground plane. **Fix that worked:** gradient sky, noise terrain with vertex colours, merged and instanced props with rounded shapes, ACES tone mapping, soft shadows that follow the player, room-style environment light, and the painted icons in the HUD. **Rule:** a prototype gets its look pass before the owner first sees it, not after.

@@ -107,13 +107,22 @@ One list in `Config.analytics`; `AnalyticsSvc` refuses names not in it.
 - **Super Freeze is a real developer product** (15 R$), granted only inside `ProcessReceipt`, saved before `PurchaseGranted`.
 - **Dev commands** (skip time, grant coins, spawn an Epic) only work in Studio.
 
+## 6b. From the prototype QA (2026-10-30, [[Games/Ice Ray for Pets/Prototype QA]])
+- **Already ported:** the Forest zone starts at the gate; saves are type- and range-checked; funnel step 4 needs a real trip; near pets and Rare+ in the far half; the Super Freeze offer has no hidden timer and shows once per run; a held pet acts at half speed; ice bridge spots on both banks with a push to the bank when it ends; bought cubes in the save (`superCubes`) and back after a rejoin; `lastBest` in the save.
+- **Super Freeze purchase:** `MonetizationService.ProcessReceipt` calls `CarryService.superFreezeOffer` (which writes `superCubes`), then `DataService.saveNow`, and only then returns `PurchaseGranted`.
+- **PenService:** the gift box opens after the first bank; "not yet" messages have a 2 s cooldown; the welcome back shows `lastBest`; the last pet before a gate spawns close by; banking takes the cubes with `CarryService.takeAll` and hands back any it can't bank.
+- **LeaderboardService:** scores clamped with `Config.leaderboards.limits` (≤ 1 freeze a second since the account was made); weekly coins only for this week's id.
+- **Others' wins seen by the server** (Game Psychology 10, Game Plan 14): a Legendary or better bank sends a server-wide banner and a light pillar over that player's pen.
+- **Pen upgrade** (+5 slots, Game Plan 11) before launch; the prototype just uses 100 slots.
+- **Gamepad:** `GuiService.SelectedObject` for menus, ButtonB closes, ButtonY presses the Super Freeze button.
+
 ## 7. Owner items (a helper can't do these)
 - Open the Rojo project in Studio on the owner's PC (`rojo serve roblox/default.project.json`) and run the Studio QA.
 - Create the **Super Freeze** developer product (15 R$) and paste its id in `Config.monetization`.
 - Optional: a badge for the weekly top 3 (`Config.leaderboards.weeklyBadgeId`).
 - Upload the pet models (the Roblox GLBs under 7,500 triangles) and paste the asset ids into `PetDefs`.
 - Pick or upload sounds and paste the ids into `Config.sounds` (0 = silent until then).
-- Real-phone test after the Studio QA.
+- Real-phone test after the Studio QA, and a real controller test (prototype QA could only use a fake gamepad).
 
 ## 8. Order of work
 1. Prototype QA → GO ([[QA Rules]] › 1). No more Roblox code before it.
