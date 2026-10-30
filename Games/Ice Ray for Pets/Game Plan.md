@@ -48,13 +48,16 @@ No tutorial text: arrows, glow and the world teach it.
 ## 4. The world
 The hub (your pen + everyone's pens) sits at the cold north end. Zones get **hotter and further away** going south. The route is a ring: you always run past the next attraction, and the next zone is always in view ahead.
 
-| # | Zone | Heat (melt ×) | Gate (commons only) | Feature |
-|---|---|---|---|---|
-| 1 | Snowy Meadow | 0.5 | open | learn to freeze |
-| 2 | Pine Forest | 0.8 | 8 pets in pen | lots of shade, first ice-bridge river |
-| 3 | Sunny Beach | 1.2 | 500 coins | sun patches, shady palm routes, ice slides |
-| 4 | Desert Dunes | 1.6 | 25,000 coins | almost no shade, sled hills, oasis shortcuts |
-| 5 | Volcano | 2.2 | 1.2M coins | lava you freeze into stepping stones; Lava mutation |
+| # | Zone | Heat (melt ×) | Temperature | Gate (commons only) | Feature |
+|---|---|---|---|---|---|
+| 1 | Snowy Meadow | 0.5 | -5°C (23°F) | open | learn to freeze |
+| 2 | Pine Forest | 0.8 | 4°C (39°F) | 8 pets in pen | lots of shade, first ice-bridge river |
+| 3 | Sunny Beach | 1.2 | 16°C (61°F) | 500 coins | sun patches, shady palm routes, ice slides |
+| 4 | Desert Dunes | 1.6 | 28°C (82°F) | 25,000 coins | almost no shade, sled hills, oasis shortcuts |
+| 5 | Volcano | 2.2 | 46°C (115°F) | 1.2M coins | lava you freeze into stepping stones; Lava mutation |
+| hub | your pen | 0.3 | -11°C (12°F) | | the cold north end |
+
+- **Temperature** (owner request 2026-10-30): every zone has a temperature, and it changes with everything that changes melting, because it is worked out from the melt speed: **°C = -20 + 30 × melt speed**. So shade makes it colder, sun hotter, night colder, and the Big Chill drops it to -20°C (nothing melts). Examples: Meadow shade -12°C, Meadow sun 3°C, Forest shade -8°C, Beach sun 34°C, Volcano sun 79°C. It never changes the melt numbers above; it only shows them. Shown as a small thermometer chip beside the goal bar (HUD item 5 of 5; the cube itself still shows time left, no melt timer) and on every zone sign. °C by default, °F in Settings. The colour of the chip goes cold blue → teal → orange → red.
 
 - **Shade**: trees, cliffs, tunnels and drifting cloud shadows melt cubes at ×0.5. Sun patches at ×1.5. Learning the shady routes is the teen skill.
 - **Ice bridges**: glowing freezable spots on rivers and lava. Hold Freeze → a bridge for 20 s (longer with ray level). The ray is also how you get around.
