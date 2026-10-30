@@ -83,7 +83,14 @@ Glowing parts (crystals, gems, neon) stay **smooth, glassy and glowing**, so the
 | Pet | Tier | File | Prompt used |
 |---|---|---|---|
 | Frostfox (style reference) | Epic | `frostfox-clay-v1.png` (cropped from `frostfox-style-test-v2.png`) | style test prompt, middle version; for new pets use sections 3 + 4 |
-| Snowbun | Common | `snowbun-v1.png` (approved 2026-10-29) | section 3 style block + the Snowbun block in [[Games/Ice Ray for Pets/Pet Brief]] › 10, word for word |
+| Snowbun | Common | `snowbun-v1.png` (approved 2026-10-29); 3D `snowbun-3d-roblox-v1.glb` | section 3 style block + the Snowbun block in [[Games/Ice Ray for Pets/Pet Brief]] › 10, word for word |
+| Waddles | Common | `waddles-v1.png` (approved 2026-10-29) | section 3 + Pet Brief › 10 Waddles block |
+| Mittenkit | Uncommon | `mittenkit-v1.png` (approved 2026-10-29) | section 3 + Pet Brief › 10 Mittenkit block |
+| Pupcicle | Rare | `pupcicle-v1.png` (approved 2026-10-29) | section 3 + Pet Brief › 10 Pupcicle block |
+| Blizzard Yeti | Legendary | `blizzard-yeti-v1.png` (approved 2026-10-29); 3D input `blizzard-yeti-3d-input-v1.png` (snowflakes removed) | section 3 + Pet Brief › 10 Blizzard Yeti block |
+| Aurora Owl | Mythic | `aurora-owl-v1.png` (approved 2026-10-29); 3D input `aurora-owl-3d-input-v1.png` (motes removed) | section 3 + Pet Brief › 10 Aurora Owl block |
+| Snowglobe Drake | Secret | `snowglobe-drake-v1.png` (approved 2026-10-29); 3D input `snowglobe-drake-3d-input-v1.png` (sparkles removed) | section 3 + Pet Brief › 10 Snowglobe Drake block |
+| Pine Forest and Sunny Beach | all | see the log (section 7); waiting for the owner's line-up review | section 3 + Pet Brief › 11.1-11.2 blocks (Bloomhorn Stag v2 adds the button-eyes line) |
 
 ## 7. Log: what was tried
 | Date | File | Result |
@@ -99,6 +106,12 @@ Glowing parts (crystals, gems, neon) stay **smooth, glassy and glowing**, so the
 | 2026-10-29 | `aurora-owl-v1.png` | Sections 3 + 4 unchanged. Emerald clumps, aurora-ribbon wings in green/pink/violet, glowing snowflake on the chest, light motes. Eyes have a green rim (fine for a Mythic). Light motes must be painted out of the 3D input image. Waiting for the owner. |
 | 2026-10-29 | `snowglobe-drake-v1.png` | Sections 3 + 4 unchanged. Ruby red, gold horns, glowing snow globe with a village on its back. **Two checks to flag:** blunt cream claws on every toe (Pet Rules › 3 says no claws out), and the village has a steeple-like tower with a plain point on top (not a cross; symbols check passes, but the owner should look). Waiting for the owner. |
 | 2026-10-29 | `snowy-meadow-lineup-v1.png` | Line-up made with `prototype/ice-ray-for-pets/tools/lineup.py` (cut-out by flood fill from the border, never a global threshold): concepts Common → Secret scaled by size class, each in an ice-cube tint, and 48 px silhouettes. All 8 main colours differ and read through the cube tint; all 8 silhouettes differ. Lavender (Yeti) and lemon (Pupcicle) are the palest in the cube. Made locally, not in the Figma file. |
+| 2026-10-29 | (all 8 Meadow) | **Owner approved the whole Meadow family** ("all of the pets look good"). |
+| 2026-10-30 | `frostfox-3d-roblox-v1.glb` | Frostfox trimmed 19,810 → 7,499 triangles, textures 2048 → 1024 px (`tools/node/optimize.mjs`). Still matches the concept (`frostfox-concept-vs-3d-roblox-v1.png`). |
+| 2026-10-30 | `snowbun-3d-rodin-v1.glb` → `snowbun-3d-roblox-v1.glb` | Rodin V2, **"8K Quad"** setting (gives about 14,600 triangles, not 8,000), 36 credits. Trimmed to 7,500. Matches the concept closely (ears, pom-poms, face, chest); the back of the head is plainer. Input was the concept PNG by raw GitHub URL (public repo), which Weave accepts. |
+| 2026-10-30 | Waddles 3D | Run started (prediction `f700b615-bd5b-40f2-85bf-8a343bc50609`), not downloaded yet. **Then Weave refused more runs: the free Weave plan allows only 2 model runs.** The other 5 Meadow pets and every other zone need a paid Weave plan. |
+| 2026-10-30 | Pine Forest, 8 pets | Sections 3 + 4 unchanged, Conehog first, then the rest. All pass. `bloomhorn-stag-v1.png` had eyelashes and pink-rimmed eyes (drift) → `bloomhorn-stag-v2.png` with "plain solid black round button eyes, no eyelashes and no coloured rim" added to the pet block: fixed. Line-up `pine-forest-lineup-v1.png`. |
+| 2026-10-30 | Sunny Beach, 8 pets | Puffsy first, then the rest. All pass; Starbit came out as a flat star rather than standing on two arms (still reads). **The Figma Starter plan hit its MCP tool-call limit** after these, so Glowfin, Reefback Turtle, Prismapus and Beacon Orca are only saved as 256 px previews (`pets/thumbs/`); `tools/fetch_pending.sh` downloads the full PNGs from any machine that can reach www.figma.com (links expire about 2026-11-06). Desert Dunes and Volcano not generated yet. |
 
 ## 8. Still to decide
 - **Pets per zone:** the brief says 7 + 1 Secret per zone (40 at launch, plus about 30 hybrids). The owner asked if 8 is enough; decide before generating the zones.
